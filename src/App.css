@@ -300,23 +300,119 @@ footer { background: #0d1e38; padding: 36px 8%; display: flex; align-items: cent
 .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
 /* RESPONSIVE */
+
+/* === Tablet landscape (960px) === */
 @media (max-width: 960px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-right { display: none; }
-  .about-section, .location-section { grid-template-columns: 1fr; gap: 40px; }
+  .about-section,
+  .location-section { grid-template-columns: 1fr; gap: 48px; }
+  .about-image-wrap img { height: 380px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .about-image-wrap img { height: 300px; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .location-map-wrap iframe { height: 360px; }
 }
+
+/* === Tablet portrait (768px) === */
+@media (max-width: 768px) {
+  nav { padding: 0 5%; }
+  section { padding: 80px 5%; }
+  .hero-left { padding: 72px 5% 64px; }
+  .call-strip { padding: 44px 5%; }
+  footer { padding: 32px 5%; }
+  .services-grid { gap: 16px; }
+  .service-card { padding: 32px 22px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .t-card { padding: 28px 24px; }
+}
+
+/* === Mobile (600px) === */
 @media (max-width: 600px) {
-  section { padding: 72px 6%; }
-  .hero-left { padding: 60px 6% 60px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .about-features { grid-template-columns: 1fr; }
-  footer { flex-direction: column; text-align: center; }
+  /* Top bar: strip description so the bar stays one line on all phones */
+  .top-bar-text,
+  .top-bar-divider { display: none; }
+
+  nav { padding: 0 5%; }
+  section { padding: 64px 5%; }
+  .hero-left { padding: 52px 5% 52px; }
+  .call-strip { padding: 40px 5%; flex-direction: column; align-items: flex-start; gap: 20px; }
+  footer { padding: 28px 5%; flex-direction: column; text-align: center; gap: 14px; }
   .footer-links { justify-content: center; }
-  .call-strip { flex-direction: column; align-items: flex-start; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
-  .stat:last-child { padding-left: 0; }
-  .top-bar { gap: 10px; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 28px 20px; }
+  .services-top,
+  .testimonials-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+  /* Hide secondary phone CTAs in section headers — nav + call strips are enough */
+  .services-top .nav-cta,
+  .testimonials-top .nav-cta { display: none; }
+
+  /* About */
+  .about-image-wrap img { height: 260px; }
+  .about-features { grid-template-columns: 1fr; }
+  /* Fix border logic for single-column */
+  .about-feat { border-right: none; border-bottom: 1px solid var(--border); }
+  .about-feat:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .about-feat:last-child { border-bottom: none; }
+
+  /* Hero stats: stay 3-col but compact */
+  .hero-stats { grid-template-columns: repeat(3, 1fr); margin-top: 44px; padding-top: 28px; }
+  .stat { padding: 0 10px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat:first-child { padding-left: 0; }
+  .stat:last-child { border-right: none; padding-right: 0; padding-left: 10px; }
+  .stat:nth-child(2) { padding-left: 10px; }
+  .stat-n { font-size: 2rem; }
+
+  /* Map */
+  .location-map-wrap iframe { height: 280px; }
+
+  /* Nav CTA: tighter on small screens */
+  .nav-cta { padding: 9px 14px; font-size: 0.75rem; }
+}
+
+/* === Small phones (480px) === */
+@media (max-width: 480px) {
+  /* Compact nav height so hero offset is correct */
+  nav { height: 56px; }
+  .hero { padding-top: 97px; } /* 41px top-bar + 56px nav */
+
+  .nav-logo { font-size: 1.2rem; }
+  .nav-cta { padding: 8px 12px; font-size: 0.72rem; letter-spacing: 0.05em; }
+
+  .hero-left { padding: 40px 5% 48px; }
+  .hero h1 { font-size: clamp(2.2rem, 9vw, 2.6rem); margin-bottom: 18px; }
+  .hero-desc { font-size: 0.95rem; margin-bottom: 32px; }
+
+  /* Stack hero actions and stretch call button for easy tap */
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+  .btn-call { text-align: center; font-size: 1.15rem; padding: 15px 20px; }
+  .btn-ghost-link { text-align: center; padding: 10px 0; }
+
+  .stat-n { font-size: 1.7rem; }
+  .stat-l { font-size: 0.62rem; }
+
+  section { padding: 56px 5%; }
+  .heading { font-size: clamp(1.8rem, 7vw, 2.2rem); }
+
+  .call-strip-text { font-size: 1.5rem; }
+  .call-strip-number { font-size: 1.9rem; }
+
+  .location-map-wrap iframe { height: 240px; }
+
+  .final-cta { padding: 72px 5% 64px; }
+  .phone-link { font-size: clamp(1.8rem, 8vw, 2.2rem); }
+  .btn-white { padding: 13px 28px; font-size: 0.78rem; }
+  .final-cta p { margin-bottom: 36px; }
+}
+
+/* === XS phones — 360px (Galaxy A, Moto G, older iPhones) === */
+@media (max-width: 360px) {
+  .hero h1 { font-size: 2rem; }
+  .btn-call { font-size: 0.95rem; }
+  .phone-link { font-size: 1.6rem; }
+  .call-strip-number { font-size: 1.5rem; }
+  .stat-n { font-size: 1.45rem; }
+  .stat-l { font-size: 0.56rem; }
+  .nav-logo { font-size: 1.1rem; }
 }
