@@ -15,9 +15,9 @@ function TopBar() {
 
 function Nav() {
   return (
-    <nav>
-      <a href="#" className="nav-logo">Five <span>J's</span> Towing</a>
-      <a href={PHONE_HREF} className="nav-cta">{PHONE}</a>
+    <nav aria-label="Main navigation">
+      <a href="#" className="nav-logo" aria-label="Five J's Towing - Home">Five <span>J's</span> Towing</a>
+      <a href={PHONE_HREF} className="nav-cta" aria-label="Call Five J's Towing now">{PHONE}</a>
     </nav>
   )
 }
@@ -27,10 +27,10 @@ function Hero() {
     <section className="hero">
       <div className="hero-left">
         <div className="hero-eyebrow">Bronx &amp; All Five Boroughs</div>
-        <h1>Bronx's Trusted<br /><em>Tow Service</em></h1>
+        <h1>Bronx's Most Trusted<br /><em>Tow Service</em></h1>
         <p className="hero-desc">
-          Stuck on the road? Five J's Automotive has been getting Bronx drivers home safely
-          for over 30 years. One call is all it takes.
+          Stuck on the road? Five J's Automotive — the Bronx's most trusted towing company —
+          has been getting drivers home safely for over 30 years. One call is all it takes.
         </p>
         <div className="hero-actions">
           <a href={PHONE_HREF} className="btn-call">{PHONE}</a>
@@ -96,7 +96,7 @@ const SERVICES = [
 
 function ServicesSection() {
   return (
-    <section className="services-section" id="services">
+    <section className="services-section" id="services" aria-label="Towing and roadside services">
       <div className="services-top">
         <div>
           <div className="label">What We Do</div>
@@ -139,7 +139,7 @@ const ABOUT_FEATURES = [
 
 function AboutSection() {
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="about" aria-label="About Five J's Towing">
       <div className="about-image-wrap">
         <img
           src="/fj123.png"
@@ -154,10 +154,10 @@ function AboutSection() {
         <div className="label">About Us</div>
         <h2 className="heading">Family-Owned,<br /><em>Bronx Built</em></h2>
         <p className="body-text">
-          At Five J's Automotive, we have been a part of the Bronx community for over three
-          decades. What started as a small family operation has grown into one of the borough's
-          most trusted automotive and towing services — without losing the personal touch that
-          defines us.
+          At Five J's Automotive, we have been a pillar of the Bronx community for over three
+          decades. What started as a small family operation has grown into the borough's
+          most trusted towing and automotive service — without ever losing the personal touch
+          that defines us.
         </p>
         <p className="body-text" style={{ marginTop: '18px' }}>
           Our drivers know these streets. We prioritize honest communication, fair pricing, and
@@ -218,7 +218,7 @@ const TESTIMONIALS = [
 
 function TestimonialsSection() {
   return (
-    <section className="testimonials-section" id="reviews">
+    <section className="testimonials-section" id="reviews" aria-label="Customer reviews">
       <div className="testimonials-top">
         <div>
           <div className="label">Customer Reviews</div>
@@ -262,7 +262,11 @@ function LocationSection() {
             <div className="detail-index">01</div>
             <div>
               <div className="detail-label">Address</div>
-              <div className="detail-value">809 Zerega Ave, Bronx, NY 10473</div>
+              <address className="detail-value" style={{ fontStyle: 'normal' }}>
+                <a href="https://maps.google.com/?q=809+Zerega+Ave+Bronx+NY+10473" target="_blank" rel="noopener noreferrer">
+                  809 Zerega Ave, Bronx, NY 10473
+                </a>
+              </address>
             </div>
           </div>
           <div className="detail-row">
@@ -340,7 +344,8 @@ function Footer() {
     <footer>
       <div className="footer-logo"><b>Five J's</b> Towing</div>
       <div className="footer-meta">
-        809 Zerega Ave, Bronx NY 10473 — &copy; 2025 Five J's Automotive
+        <address style={{ fontStyle: 'normal', display: 'inline' }}>809 Zerega Ave, Bronx NY 10473</address>
+        {' '}— &copy; {new Date().getFullYear()} Five J's Automotive. Bronx's Most Trusted Tow Service.
       </div>
       <div className="footer-links">
         <a href="https://fivejsbronx.com" target="_blank" rel="noopener noreferrer">Main Website</a>
