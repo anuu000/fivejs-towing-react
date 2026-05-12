@@ -26,11 +26,11 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-left">
-        <div className="hero-eyebrow">Bronx &amp; All Five Boroughs</div>
+        <div className="hero-eyebrow">Bronx, Westchester &amp; All Five Boroughs</div>
         <h1>Bronx's Most Trusted<br /><em>Tow Service</em></h1>
         <p className="hero-desc">
           Stuck on the road? Five J's Automotive — the Bronx's most trusted towing company —
-          has been getting drivers home safely for over 30 years. One call is all it takes.
+          has been getting drivers home safely since 1992. One call is all it takes.
         </p>
         <div className="hero-actions">
           <a href={PHONE_HREF} className="btn-call">{PHONE}</a>
@@ -38,8 +38,8 @@ function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <div className="stat-n">30+</div>
-            <div className="stat-l">Years in Bronx</div>
+            <div className="stat-n">'92</div>
+            <div className="stat-l">In Business Since</div>
           </div>
           <div className="stat">
             <div className="stat-n">24/7</div>
@@ -65,7 +65,7 @@ const SERVICES = [
   {
     num: '01',
     name: 'Emergency Towing',
-    desc: 'Stuck anywhere in the Bronx or five boroughs? Our flatbed trucks respond fast. We handle cars, SUVs, trucks, and motorcycles with full care.',
+    desc: 'Stuck anywhere in the Bronx, Westchester, or five boroughs? Our flatbed trucks respond fast. We handle cars, SUVs, trucks, and motorcycles with full care.',
   },
   {
     num: '02',
@@ -134,7 +134,7 @@ const ABOUT_FEATURES = [
   { title: 'Fast Arrival', sub: 'Average 30-minute response in the Bronx' },
   { title: 'No Hidden Fees', sub: 'Transparent pricing, always upfront' },
   { title: 'Licensed & Insured', sub: 'Fully certified operators on every call' },
-  { title: 'All 5 Boroughs', sub: 'Manhattan, Brooklyn, Queens, Staten Island' },
+  { title: 'NYC & Westchester', sub: 'All 5 Boroughs + Westchester County' },
 ]
 
 function AboutSection() {
@@ -146,7 +146,7 @@ function AboutSection() {
           alt="Five J's Tow Truck with American Flag decals"
         />
         <div className="about-image-caption">
-          <span>Est. 1990s</span>
+          <span>Est. 1992</span>
           809 Zerega Ave, Bronx NY
         </div>
       </div>
@@ -154,9 +154,9 @@ function AboutSection() {
         <div className="label">About Us</div>
         <h2 className="heading">Family-Owned,<br /><em>Bronx Built</em></h2>
         <p className="body-text">
-          At Five J's Automotive, we have been a pillar of the Bronx community for over three
-          decades. What started as a small family operation has grown into the borough's
-          most trusted towing and automotive service — without ever losing the personal touch
+          At Five J's Automotive, we have been a pillar of the Bronx community since 1992.
+          What started as a small family operation has grown into one of the area's
+          most trusted towing and automotive services — without ever losing the personal touch
           that defines us.
         </p>
         <p className="body-text" style={{ marginTop: '18px' }}>
@@ -292,7 +292,7 @@ function LocationSection() {
             <div className="detail-index">04</div>
             <div>
               <div className="detail-label">Service Area</div>
-              <div className="detail-value">Bronx, Manhattan, Brooklyn, Queens, Staten Island</div>
+              <div className="detail-value">Bronx, Manhattan, Brooklyn, Queens, Staten Island &amp; Westchester County</div>
             </div>
           </div>
         </div>
@@ -324,7 +324,7 @@ function FinalCTA() {
     <section className="final-cta">
       <div className="label">24 hours — 7 days a week</div>
       <h2>Need a Tow<br /><em>Right Now?</em></h2>
-      <p>One call and we are on our way. Serving the Bronx and all five boroughs.</p>
+      <p>One call and we are on our way. Serving the Bronx, Westchester, and all five boroughs.</p>
       <a href={PHONE_HREF} className="phone-link">{PHONE}</a>
       <br />
       <a
@@ -368,7 +368,7 @@ export default function App() {
         <CallStrip label="Call us anytime, day or night" text="Need a tow right now?" />
         <AboutSection />
         <TestimonialsSection />
-        <CallStrip label="Licensed tow operators, all five boroughs" text="Stranded? We will come to you." />
+        <CallStrip label="Licensed tow operators, NYC & Westchester" text="Stranded? We will come to you." />
         <LocationSection />
         <FinalCTA />
       </main>
